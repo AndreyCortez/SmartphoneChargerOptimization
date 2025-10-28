@@ -1,30 +1,23 @@
 import random
 import math
-import csv  
+import csv
 import matplotlib.pyplot as plt
 from matplotlib.patches import Circle
 
 
-
-
+# --- Constantes do Gerador ---
 NUM_ZONAS_DEMANDA = 12
-NUM_LOCAIS_CANDIDATOS = 15
-
-
-RAIO_DE_CONVENIENCIA = 50.0  
-
-
+NUM_LOCAIS_CANDIDATOS = 30
+RAIO_DE_CONVENIENCIA = 50.0
 SHOPPING_LARGURA = 300.0
 SHOPPING_ALTURA = 200.0
-
-
 MIN_DEMANDA = 10
-MAX_DEMANDA = 60
+MAX_DEMANDA = 40
 MIN_CUSTO_FIXO = 1000
 MAX_CUSTO_FIXO = 5000
-MIN_CAPACIDADE = 15
-MAX_CAPACIDADE = 30
-
+MIN_CAPACIDADE = 30
+MAX_CAPACIDADE = 60
+# --- Fim das Constantes ---
 
 
 def calcular_distancia(p1, p2):
@@ -46,7 +39,6 @@ def gerar_ponto_proximo(ponto_central, max_raio, largura, altura):
     novo_y = max(0, min(altura, ponto_central[1] + dy))
     
     return (novo_x, novo_y)
-
 
 
 def gerar_cenario():
@@ -94,9 +86,9 @@ def gerar_cenario():
             "id": f"C{i+1}",
             "nome": nomes_candidatos_possiveis.pop(),
             "localizacao": gerar_ponto_proximo(ponto_demanda_central, 
-                                                RAIO_DE_CONVENIENCIA, 
-                                                SHOPPING_LARGURA, 
-                                                SHOPPING_ALTURA),
+                                               RAIO_DE_CONVENIENCIA, 
+                                               SHOPPING_LARGURA, 
+                                               SHOPPING_ALTURA),
             "custo_fixo": random.randint(MIN_CUSTO_FIXO, MAX_CUSTO_FIXO),
             "capacidade": random.randint(MIN_CAPACIDADE, MAX_CAPACIDADE)
         }
@@ -122,12 +114,9 @@ def gerar_cenario():
     return zonas_demanda, locais_candidatos
 
 
-
 def salvar_em_csv(zonas_demanda, locais_candidatos):
     
-    
     nome_arquivo_demanda = 'zonas_demanda.csv'
-    
     headers_demanda = ['id', 'nome', 'localizacao_x', 'localizacao_y', 'demanda']
     
     with open(nome_arquivo_demanda, 'w', newline='', encoding='utf-8') as f:
@@ -140,7 +129,6 @@ def salvar_em_csv(zonas_demanda, locais_candidatos):
             
     
     nome_arquivo_candidatos = 'locais_candidatos.csv'
-    
     headers_candidatos = ['id', 'nome', 'localizacao_x', 'localizacao_y', 'custo_fixo', 'capacidade']
     
     with open(nome_arquivo_candidatos, 'w', newline='', encoding='utf-8') as f:
@@ -150,7 +138,6 @@ def salvar_em_csv(zonas_demanda, locais_candidatos):
             loc_x = p['localizacao'][0]
             loc_y = p['localizacao'][1]
             writer.writerow([p['id'], p['nome'], f"{loc_x:.2f}", f"{loc_y:.2f}", p['custo_fixo'], p['capacidade']])
-
 
 
 def plotar_cenario(zonas_demanda, locais_candidatos, raio_max, largura, altura):
@@ -174,7 +161,7 @@ def plotar_cenario(zonas_demanda, locais_candidatos, raio_max, largura, altura):
         ax.annotate(txt, (zd_x[i], zd_y[i]), textcoords="offset points", xytext=(0,-15), ha='center', fontsize=9, color='darkred', weight='bold')
 
     for i, p in enumerate(zonas_demanda):
-        label_raio = "Raio de Conveniência (S_max)" if i == 0 else ""
+        label_raio = "Raio de Conveniência" if i == 0 else ""
         circulo = Circle(p['localizacao'], raio_max, color='red', fill=False, linestyle='--', alpha=0.6, label=label_raio)
         ax.add_patch(circulo)
 
@@ -189,16 +176,19 @@ def plotar_cenario(zonas_demanda, locais_candidatos, raio_max, largura, altura):
     ax.set_ylim(0, altura)
     
     plt.tight_layout()
+    
+    # --- MODIFICAÇÃO PARA SALVAR O GRÁFICO DO CENÁRIO ---
+    nome_arquivo_cenario = "cenario_inicial.png"
+    plt.savefig(nome_arquivo_cenario, dpi=300, bbox_inches='tight')
+    print(f"\nGráfico do cenário salvo em: {nome_arquivo_cenario}")
+    # --- FIM DA MODIFICAÇÃO ---
+    
     plt.show()
-
-
 
 
 if __name__ == "__main__":
     
-    
     zonas_demanda, locais_candidatos = gerar_cenario()
-    
     
     salvar_em_csv(zonas_demanda, locais_candidatos)
     print("=" * 80)
@@ -226,7 +216,6 @@ if __name__ == "__main__":
         print(f"{p['id']:<4} | {p['nome']:<28} | {loc_str:<20} | R$ {p['custo_fixo']:<6} | {p['capacidade']} portas")
         
         
-    
     print("\n" + "=" * 80)
     print(f"VERIFICANDO RESTRIÇÃO (Raio de Conveniência = {RAIO_DE_CONVENIENCIA}m)")
     print("=" * 80)

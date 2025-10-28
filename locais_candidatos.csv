@@ -1,16 +1,31 @@
 id,nome,localizacao_x,localizacao_y,custo_fixo,capacidade
-C1,Balcão de Informações,86.61,169.51,3931,28
-C2,Perto da Entrada A,262.45,169.95,3708,25
-C3,Corredor Central,213.26,68.90,2409,29
-C4,Corredor de Serviços,211.77,118.86,1939,27
-C5,Saída Estacionamento B2,204.39,64.19,2454,20
-C6,Saída Estacionamento A1,185.50,106.19,1606,22
-C7,Lounge Piso 1,108.33,189.36,4622,23
-C8,Ao lado do Banheiro 2,62.88,71.01,4216,17
-C9,Ao lado do Banheiro 1,136.39,115.31,2242,25
-C10,Perto da Entrada B,209.18,41.33,2835,27
-C11,Perto dos Elevadores,174.82,196.69,3719,16
-C12,Perto da Lotérica,92.63,199.99,3889,30
-C13,Perto da Escada Rolante S,271.29,111.11,4743,20
-C14,Lounge Piso 2,160.03,145.77,3710,25
-C15,Corredor da C&A,173.90,120.16,3693,24
+C1,Perto da Nike,175.18,27.35,2502,48
+C2,Balcão de Informações,242.28,0.00,3162,31
+C3,Perto dos Elevadores,127.55,63.08,3645,38
+C4,Perto da Escada Rolante N,146.04,37.83,3460,50
+C5,Ao lado do Banheiro 2,244.62,190.38,4965,37
+C6,Lounge Piso 2,10.66,0.00,2543,32
+C7,Perto da Entrada A,254.37,185.89,1286,57
+C8,Ponto Extra 5,75.34,118.29,3936,43
+C9,Ao lado do Banheiro 1,149.80,60.39,3943,42
+C10,Ao lado da Starbucks,18.23,89.60,4414,58
+C11,Ponto Extra 1,167.69,129.46,3499,50
+C12,Em frente à Renner,151.24,98.58,2719,34
+C13,Ponto Extra 4,226.44,148.82,3018,35
+C14,Corredor de Serviços,129.63,81.87,3270,51
+C15,Lounge Piso 1,300.00,173.33,1140,51
+C16,Ponto Extra 10,296.27,43.42,2259,34
+C17,Entrada do Supermercado,69.63,36.58,1020,35
+C18,Saída Estacionamento A1,179.44,163.76,3362,36
+C19,Saída Estacionamento B2,252.35,91.67,1363,54
+C20,Ponto Extra 2,0.19,162.17,3240,31
+C21,Ponto Extra 6,177.73,78.86,3877,40
+C22,Perto da Escada Rolante S,232.50,168.19,4285,44
+C23,Perto da Entrada B,300.00,191.25,1207,37
+C24,Ponto Extra 3,102.81,3.58,1922,58
+C25,Perto da Lotérica,70.82,186.05,1652,53
+C26,Ponto Extra 7,36.47,162.35,4201,40
+C27,Ponto Extra 9,25.18,58.47,4539,59
+C28,Corredor da C&A,74.32,80.89,1956,36
+C29,Ponto Extra 8,16.83,128.07,4827,43
+C30,Corredor Central,113.11,161.73,1298,45
