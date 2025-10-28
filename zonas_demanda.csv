@@ -1,0 +1,13 @@
+id,nome,localizacao_x,localizacao_y,demanda
+D1,Lojas de Departamento,182.44,179.62,31
+D2,Entrada Principal,20.78,44.37,25
+D3,Área de Jogos,284.41,160.87,53
+D4,Praça de Alimentação,164.52,97.31,37
+D5,Corredor Leste,235.06,27.10,60
+D6,Ala das Âncoras,176.88,144.09,25
+D7,Piso Superior,164.07,51.21,37
+D8,Corredor Oeste,142.17,114.53,10
+D9,Fraldário,282.50,133.57,20
+D10,Área dos Cinemas,74.90,159.79,59
+D11,Zona Extra 11,90.61,174.83,24
+D12,Zona Extra 12,221.98,115.87,55
